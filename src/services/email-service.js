@@ -1,5 +1,6 @@
 
-const {MAILER, Logger} = require('../config');
+const {Logger} = require('../config');
+const MAILER = require('../config/email-config');
 const {TicketRepository} = require('../repositories/');
 const AppErrors = require('../utils/errors/app-errors');
 const {StatusCodes} = require('http-status-codes');
