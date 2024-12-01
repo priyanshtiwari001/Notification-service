@@ -1,13 +1,14 @@
 const nodeMailer = require('nodemailer');
-const {ServerConfig} = require('./index');
+const {ServerConfig} = require('../config')
 
 
-const sendMailer = nodeMailer.createTransport({
+// console.log("email", ServerConfig.EMAIL);
+const mailSender = nodeMailer.createTransport({
     service:'Gmail',
     auth:{
-        user:ServerConfig.GMAIL_EMAIL,
-        pass:ServerConfig.GMAIL_PASS,
+      user:ServerConfig.EMAIL,
+      pass:ServerConfig.GMAIL_PASS
     }
 })
 
-module.exports=sendMailer
+module.exports=mailSender;
